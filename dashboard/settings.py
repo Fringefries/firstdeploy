@@ -180,3 +180,8 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 500000
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Simplified static files configuration
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
