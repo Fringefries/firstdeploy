@@ -36,9 +36,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$306uap@4gro!0nm16i%7wtd_)rt7vh+nkhg=k^(g6q=5o%ve)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -151,8 +151,10 @@ STATICFILES_DIRS = [
     os.path.join(os.path.dirname(BASE_DIR), "assets", "media"),
 ]
 STATIC_DIR = os.path.join(os.path.dirname(BASE_DIR), "assets", "static")
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "assets", "static_cdn")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "assets", "media")
+
+STATIC_URL = '/static/'
 
 FILE_UPLOAD_TEMP_DIR = os.path.join(os.path.dirname(BASE_DIR), "assets", "media", "temp")
 
@@ -171,3 +173,7 @@ LOGOUT_REDIRECT_URL = "/login/"
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS']
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 500000
+
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
